@@ -43,8 +43,8 @@ body {
       height: 100%;
       display: flex;
       flex-direction: column;
-      border: 2px solid #5e6469; /* Add a border to the card */
-      border-radius: 10px; /* Add rounded corners to the card */
+      border: 2px solid #5e6469;
+      border-radius: 10px; 
       overflow: hidden;
     }
     
@@ -63,26 +63,6 @@ body {
     
     .card-title, .card-text {
       margin-bottom: 0.5rem;
-    }
-  
-    /* Fun buttons */
-  .btn-primary {
-      background-color: #050222;
-      border: none;
-      border-radius: 50px;
-      font-size: 1rem;
-      padding: 10px 20px;
-      transition: background-color 0.3s, transform 0.3s;
-    }
-    
-    .btn-primary:hover {
-      background-color: #05031d;
-      transform: translateY(-2px);
-    }
-    
-    .btn-primary:active {
-      background-color: #09071de8;
-      transform: translateY(0);
     }
   
     .featured-products h2,
