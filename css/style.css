@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+body {
+  font-family: 'Averia Serif Libre', serif;
+}
+
+/* Navbar */
+.navbar {
+    & img[alt='logo'] {
+        width: 5rem;
+    }
+}
+
+/* display -> grid */
+:is(body, .card) { 
+    display: grid;
+}
+
+/* Number of rows */
+:is(body) {
+    grid-template-rows: auto minmax(100dvh, 100%) auto;
+}
+
+/* text-align: center */
+:is(h2, footer p) {
+    text-align: center;
+}  
+
+.hero {
+    background-image: url('https://github.com/Kifaa26/images-js/blob/main/d5c1d57184e6b43e65206679b10c1970.jpg?raw=true');
+    background-size: cover;
+    background-position: center;
+    color: rgb(255, 255, 255);
+  }
+  
+  .promo {
+    background-image: url('https://github.com/Kifaa26/images-js/blob/main/af3cb50cec2b80f41ac063b5b33f651e.jpg?raw=true');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      border: 2px solid #5e6469; /* Add a border to the card */
+      border-radius: 10px; /* Add rounded corners to the card */
+      overflow: hidden;
+    }
+    
+    .card-img-top {
+      height: 300px;
+      object-fit: cover; 
+      border-bottom: 2px solid #9299a0;
+    }
+    
+    .card-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
+    .card-title, .card-text {
+      margin-bottom: 0.5rem;
+    }
+  
+    /* Fun buttons */
+  .btn-primary {
+      background-color: #050222;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      padding: 10px 20px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    
+    .btn-primary:hover {
+      background-color: #05031d;
+      transform: translateY(-2px);
+    }
+    
+    .btn-primary:active {
+      background-color: #09071de8;
+      transform: translateY(0);
+    }
+  
+    .featured-products h2,
+  .featured-products h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .featured-products h2 {
+    border-bottom: 2px solid #343a40;
+    padding-bottom: 0.5rem;
+  }
+  
+  .featured-products h3 {
+    border-bottom: 1px solid #7a8b9c;
+    padding-bottom: 0.25rem;
+  }
