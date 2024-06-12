@@ -105,6 +105,7 @@ body {
 
 
 #contact {
+  color: #020202;
   font-family: 'Averia Serif Libre', serif;
 }
 
@@ -133,5 +134,32 @@ body {
 .form-label {
   color: rgb(7, 7, 7);
 }
+
+.social-icons a {
+  font-size: 1.5rem;
+  color: #fffefe 0.3s;
+}
+
+.social-icons a:hover{
+  color:#ffffff
+}
+
+.social-icons p {
+  margin-bottom: 10px;
+}
+
+.search-button {
+  background-color: #457a9c;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  padding: 8px 20px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #38556d;
+}
+
 
 
