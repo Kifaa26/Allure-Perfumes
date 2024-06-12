@@ -1,11 +1,12 @@
 let container = document.querySelector('#catalogue')
 let search = document.querySelector('#search')
+let sorting = document.querySelector('#sort')
 
 
 
 let products = JSON.parse(localStorage.getItem('products')) || []
 
-//display products
+let checkoutItems = localStorage.getItem('checkout') ? JSON.parse(localStorage.getItem('checkout')) : []
 
 function displayProducts(args) {
     container.innerHTML = ""
@@ -32,68 +33,133 @@ function displayProducts(args) {
 
 displayProducts(products)
 
-let checkoutItems = localStorage.getItem('checkout') ? JSON.parse(localStorage.getItem('checkout')) : []
+// addtocart
 
 function addToCart(product){
     try {
         checkoutItems.push(product)
         localStorage.setItem('checkout', JSON.stringify(checkoutItems))
-        document.querySelector('[counter]').textContent = 
+        document.querySelector('#counter').textContent =
         checkoutItems.length || 0
-
     }catch(e) {
         alert("Add to cart unsuccessful")
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('[counter]').textContent = checkoutItems.length || 0
-    
-    document.querySelector('.addToCart').forEach(button => {
-            button.addEventListener('click', (event) => {
-                let product = {
-                    id: event.target.dataset.id,
-                    name: event.target.dataset.name,
-                    price: event.target.dataset.price,
-        
-                };
-                addToCart(product)
-            })
-        })
-})
+//displayCheckoutItems
+function displayCheckoutItems () {
+    const tbody = document.querySelector('table tbody')
+    const cartTotal = document.querySelector('#cartTotal')
+    tbody.innerHTML = ''
 
+    let total = 0
+
+    checkoutItems.forEach(item => {
+        const row = document.createElement('tr')
+        row.innerHTML = `
+        <td>${item.id}</td>
+        <td>${item.name}</td>
+        <td>${item.price}</td>
+        <td>1</td>
+        `;
+        tbody.appendChild(row)
+
+        total = parseFloat(item.price)
+    })
+
+    cartTotal = parseFloat
+}
+
+//clearCart
 function clearCart() {
     try {
         localStorage.removeItem('checkout')
         checkoutItems = []
-        document.querySelector('[counter]').textContent = 0
+        document.querySelector('#counter').textContent = 0
+        displayCheckoutItems()
         document.getElementById('cartItems').innerHTML = ''
-        document.getElementById('cartTotal').textContent = '0.00'
+        document.getElementById('cartTotal').textContent = 0.00
 
     }catch (e) {
         alert('Clearing cart unsuccessful')
     }
-
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('#counter').textContent = checkoutItems.length || 0
 
-    document.getElementById('clearCartBtn').addEventListener('click', clearCart)
+    if (document.querySelectorAll('.addToCart')) {
+        document.querySelectorAll('.addToCart').forEach(button => {
+            button.addEventListener('click', (event) => {
+                let product = {
+                    id: event.tartget.dataset.id,
+                    name: event.target.dataset.name,
+                    price: event.target.dataset.price,
+
+                };
+                addToCart(product)
+            })
+        })
+    }
+
+if (document.querySelector('#clearCartBtn')) {
+    document.querySelector('#clearCartBtn').addEventListener('click',clearCart )
+}
+
+displayProducts(products)
+displayCheckoutItems()
+clearCart()
+
 })
 
-//search
 
-search.addEventListener('keyup', () => {
+
+//Search
+
+search.addEventListener('keyup', (event) => {
     try {
-        if (search.value.length < 1) {
+        const searchTerm = event.target.value.trim().toLowerCase();
+        if(searchTerm.length < 1) {
             displayProducts(products)
         }
+
         let filteredProduct = products.filter(product => 
-            product.name.toLowerCase().includes(search.value))
+            product.name.toLowerCase().includes(searchTerm))
+
         displayProducts(filteredProduct)
-        if (!filteredProduct.length) throw new Error(`${search.value} was not found`)
+
+        if (!filteredProduct.length === 0) {
+            throw new Error(`${searchTerm} was not found`)
+        }
 
     } catch (e) {
         container.textContent = e.message || 'Please try again later'
+    }
+}) 
+
+//sort
+
+let descendingOrder = false 
+
+function toggleSortingOrder() {
+    descendingOrder = !descendingOrder
+}
+
+sorting.addEventListener('click', () => {
+    try {
+        if(!products) throw new Error('Please try again later')
+
+            if(!descendingOrder) {
+                products.sort((a, b) => b.price - a.price)
+                sorting.textContent = 'Sort by price: lowest'
+            } else {
+                products.sort((a, b) => a.price - b.price)
+                sorting.textContent = 'Sort by price: highest'
+            }
+
+            toggleSortingOrder()
+            displayProducts(products)
+    }catch (e) {
+        container.textContent - e.message || 'We are working on this issue'
     }
 })

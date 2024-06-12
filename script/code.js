@@ -47,7 +47,7 @@ let products = JSON.parse(localStorage.getItem('products')) ?
                 category: 'Womens',
                 description: 'The head notes open with refined hints of bergamot, melding with pear and freesia to create a vivacious, delectable and unexpected bouqet. Heart bursts with violet accords, blending with rich coffe notes and charming Moroccan iris.',
                 price: 'R3570.00',
-                img_url: "https://github.com/Kifaa26/images-js/blob/main/Listing/95138e0951241d6b9573fbfea0fb5bfd.jpg?raw=true"
+                img_url: "https://github.com/Kifaa26/images-js/blob/main/Listing/ed58fb5e2eb29c77a747f74fff3bb37c.jpg?raw=true"
             },
             {
                 id: 7,
@@ -71,7 +71,7 @@ let products = JSON.parse(localStorage.getItem('products')) ?
                 category: 'Mens',
                 description: 'Intense composition of amber, leather, spices and woods.',
                 price: 'R3050.00',
-                img_url: "https://github.com/Kifaa26/images-js/blob/main/Listing/4cc12db09716510d02ef08e7478fe9bf.jpg?raw=true"
+                img_url: "https://github.com/Kifaa26/images-js/blob/main/Listing/7a09f098a9d92a48571f14c44b51a631.jpg?raw=true"
             },
             {
                 id: 10,
