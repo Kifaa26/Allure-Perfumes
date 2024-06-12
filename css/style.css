@@ -63,7 +63,7 @@ body {
     }
     
     .card-title, .card-text {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0;
     }
   
     .featured-products h2,
@@ -161,5 +161,10 @@ body {
   background-color: #38556d;
 }
 
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
 
 
