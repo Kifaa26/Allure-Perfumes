@@ -46,44 +46,6 @@ function addToCart(product){
     }
 }
 
-//displayCheckoutItems
-function displayCheckoutItems () {
-    const tbody = document.querySelector('table tbody')
-    const cartTotal = document.querySelector('#cartTotal')
-    tbody.innerHTML = ''
-
-    let total = 0
-
-    checkoutItems.forEach(item => {
-        const row = document.createElement('tr')
-        row.innerHTML = `
-        <td>${item.id}</td>
-        <td>${item.name}</td>
-        <td>${item.price}</td>
-        <td>1</td>
-        `;
-        tbody.appendChild(row)
-
-        total = parseFloat(item.price)
-    })
-
-    cartTotal = parseFloat
-}
-
-//clearCart
-function clearCart() {
-    try {
-        localStorage.removeItem('checkout')
-        checkoutItems = []
-        document.querySelector('#counter').textContent = 0
-        displayCheckoutItems()
-        document.getElementById('cartItems').innerHTML = ''
-        document.getElementById('cartTotal').textContent = 0.00
-
-    }catch (e) {
-        alert('Clearing cart unsuccessful')
-    }
-}
 
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#counter').textContent = checkoutItems.length || 0
@@ -107,9 +69,6 @@ if (document.querySelector('#clearCartBtn')) {
 }
 
 displayProducts(products)
-displayCheckoutItems()
-clearCart()
-
 })
 
 
@@ -159,6 +118,7 @@ sorting.addEventListener('click', () => {
 
             toggleSortingOrder()
             displayProducts(products)
+            
     }catch (e) {
         container.textContent - e.message || 'We are working on this issue'
     }

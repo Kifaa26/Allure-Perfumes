@@ -47,6 +47,7 @@ body {
       border-radius: 10px; 
       overflow: hidden;
       box-shadow: 0 4px 8px rgb(61, 61, 61);
+      scale: 0.9;
     }
     
     .card-img-top {
@@ -210,14 +211,14 @@ table th {
   background-color: #0d0d0d;
 }
 
- body {
+ /* body {
   background-image: url(https://github.com/Kifaa26/images-js/blob/main/d4f5ac02d94531e7be0ca4fae72736aa.jpg?raw=true);
   background-size: cover;
   background-position: center;
   background-position: relative;
-}
+} */
 
- body::before {
+ /* body::before {
   content: "";
   position: absolute;
   top: 0;
@@ -226,7 +227,7 @@ table th {
   height: 100%;
   background-color: rgba(225, 225, 225, 0.5);
   z-index: -1;
-}
+} */
 
 
 
