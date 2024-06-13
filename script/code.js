@@ -53,7 +53,7 @@ let products = JSON.parse(localStorage.getItem('products')) ?
                 id: 7,
                 name: 'ARMANI ACQUA DI GIO HOMME PROFUMO',
                 category: 'Mens',
-                description: 'Scents: Peony, Musk, Pneapple, Lemon, Peach, Banana leaf, Violet, Musk, Ceder, Sandalwood, Amber ',
+                description: 'Scents: Peony, Musk, Pineapple, Lemon, Peach, Banana leaf, Violet, Musk, Ceder, Sandalwood, Amber ',
                 price: 4992.00,
                 img_url: "https://github.com/Kifaa26/images-js/blob/main/Listing/1d4b400ca58b4b21b167531bc57ca4d8.jpg?raw=true"
             },
@@ -61,7 +61,7 @@ let products = JSON.parse(localStorage.getItem('products')) ?
                 id: 8,
                 name: 'BLEU DE CHANEL',
                 category: 'Mens',
-                description: 'Scents: Fresh citrus, Mmbery cedar, Tonka bean, Vanilla',
+                description: 'Scents: Fresh citrus, Ambery cedar, Tonka bean, Vanilla',
                 price: 2985.00,
                 img_url: "https://github.com/Kifaa26/images-js/blob/main/Listing/34cbc134e196d9168c041d25455cd302.jpg?raw=true"
             },

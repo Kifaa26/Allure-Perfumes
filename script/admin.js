@@ -111,6 +111,7 @@ sortedProducts.addEventListener('click', () => {
     }
 });
 
+
 let adminSavedProduct = document.getElementById('saveProduct');
 adminSavedProduct.addEventListener('click', () => {
     try {
