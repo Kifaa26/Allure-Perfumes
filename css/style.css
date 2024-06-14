@@ -2,7 +2,6 @@
 
 body {
   font-family: 'Averia Serif Libre', serif;
-  font-size: 16px;
 }
 
 /* Navbar */
@@ -287,7 +286,8 @@ table th {
   width: 80px;
 }
 
-@media screen and (max-width :768px){
+
+@media screen and (max-width:768px) {
   body {
     font-size: 14px;
   }
@@ -295,41 +295,64 @@ table th {
 
 @media screen and (min-width: 1200px) {
   body {
-    font-size: 18px
+    font-size: 18px;
   }
 }
 
-.card {
-  margin-bottom: 20px;
+.modal-dialog {
+  max-width: 600px;
 }
 
-@media (min-width: 576px) {
-  .col-md-4 {
-    flex: 0 0 50%;
-    max-width: 50%;
+@media (max-width:768px) {
+  .modal-dialog {
+    max-width: 90%;
   }
 }
 
-@media (min-width: 768px) {
-  .col-md-4 {
-    flex: 0 0 33.%;
-    max-width: 33.%;
+@media (max-width: 576px) {
+  .btn {
+    margin-bottom: 10px;
   }
 }
 
-@media (min-width: 992px) {
-  .col-md-4 {
-    flex: 0 0 25%;
-    max-width: 25%;
+@media (max-width: 480px) {
+  .modal-body {
+    padding: 10px;
   }
 }
 
-@media (min-width: 1200px) {
-  .col-md-4 {
-    flex: 0 0 20%;
-    max-width: 20%;
+.modal-dialog {
+  max-width: 600px;
+}
+
+@media (max-width: 768px) {
+  .modal-dialog {
+    max-width: 70%;
   }
 }
+
+@media(max-width: 576px) {
+  .btn {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-body {
+    padding: 10px;
+}
+}
+
+@media(max-width: 300px) {
+  .container {
+    padding-top: 10px;
+  }
+  .modal-dialog {
+    max-width: 80%;
+  }
+}
+  
+
 
 
 
