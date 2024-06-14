@@ -178,3 +178,4 @@ function applyFilters() {
     displayProducts(filteredProducts)
 }
 
+
