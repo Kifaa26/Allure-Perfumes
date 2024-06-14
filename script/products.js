@@ -160,3 +160,21 @@ sorting.addEventListener('click', () => {
     }
 })
 
+function applyFilters() {
+    let selectedCategories = []
+
+    let checkboxes = document.querySelectorAll('.form-check-input')
+
+    checkboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+            selectedCategories.push(checkbox.value)
+        }
+    })
+
+    let filteredProducts = products.filter(product => {
+        return selectedCategories.length === 0 || selectedCategories.includes(product.category)
+    })
+
+    displayProducts(filteredProducts)
+}
+
