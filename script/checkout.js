@@ -31,8 +31,14 @@ function displayCheckoutItems () {
         `;
     }
 
+
+    cartTotal.textContent = total.toFixed(2)
+
 }
 displayCheckoutItems()
+
+
+
 
 // clearCart
 function clearCart() {
@@ -46,3 +52,4 @@ function payNow() {
     alert('Payment successful');
     location.reload();
 } 
+
