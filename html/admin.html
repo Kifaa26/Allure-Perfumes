@@ -72,8 +72,20 @@
 
               <div class="col-12 d-flex justify-content-center pt-5 pb-4">
 
-                  <h5 class="contact-text mb-3">Admin</h5>
+                  <h5 class="contact-text">Admin</h5>
               </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col d-flex justify-content-center">
+            <button class="btn btn-outline-success ml-auto m-3" id="adminSortProduct"><span class="text-light">Sort Items</span></button>
+
+            
+            <button type="button" class="btn btn-outline-success ml-auto m-3" data-bs-toggle="modal" data-bs-target="#adminAddProduct">
+              <span class="text-light">Add New Items</span>
+              
+            </button>
           </div>
         </div>
 
@@ -105,34 +117,30 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <table class="table-responsive table-bordered">
-            <thead class="table-group-divider">
-              <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Description</th>
-                <th style="width: 80px;">Price</th>
-                <th>Image</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody class="table-group-divider" id="table-products">
- 
-            </tbody>
-          </table>
-        </div>
-        <div class="row">
-          <div class="col">
-            <button class="btn btn-outline-success m-3" id="adminSortProduct">Sort Items</button>
-            <button type="button" class="btn btn-outline-success ml-auto m-3" data-bs-toggle="modal" data-bs-target="#adminAddProduct">
-              Add New Items
-            </button>
+
+        
+          <div class="row justify-content-center mt-4">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Category</th>
+                  <th>Description</th>
+                  <th>Price</th>
+                  <th>Images</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="table-products">
+                <!--Products will show here-->
+              </tbody>
+            </table>
           </div>
-        </div>
+    
         
       </section>
+
 
     </main>
 

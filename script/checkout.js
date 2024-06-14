@@ -9,20 +9,28 @@ function displayCheckoutItems () {
 
     let total = 0
 
-    checkoutItems.forEach(item => {
-        const row = document.createElement('tr')
-        row.innerHTML = `
-        <td>${item.id}</td>
-        <td>${item.name}</td>
-        <td>R ${item.price}</td>
-        <td>1</td>
+    if (checkoutItems.length > 0) {
+        checkoutItems.forEach(item => {
+            const row = document.createElement('tr')
+            row.innerHTML = `
+                    <td>${item.id}</td>
+                    <td>${item.name}</td>
+                    <td>R ${item.price}</td>
+                    <td>${item.quantity}</td>
+            `;
+            tbody.appendChild(row)
+    
+            total += parseFloat(item.price) * item.quantity
+        })
+    }else {
+        tbody.innerHTML = `
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status"></div>
+            <p>No Products Found</p>
+        </div>
         `;
-        tbody.appendChild(row)
+    }
 
-        total += parseFloat(item.price)
-    })
-
-    cartTotal.textContent = total.toFixed(2)
 }
 displayCheckoutItems()
 
@@ -37,4 +45,4 @@ function payNow() {
     localStorage.removeItem('checkout');
     alert('Payment successful');
     location.reload();
-}
+} 
